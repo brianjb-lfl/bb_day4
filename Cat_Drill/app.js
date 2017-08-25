@@ -1,7 +1,8 @@
 'use strict';
 
-$('img').on('click', function (event) {
-  $('.hero img').attr('src', $(this).attr('src'));
-  $('.hero img').attr('alt', $(this).attr('alt'));
-  console.log($(this).attr('src'));
+$('.thumbnail').on('click', function (event) {
+  let currImg = $(this).find('img');
+  $('.hero img').attr('src', currImg.attr('src'));
+  $('.hero img').attr('alt', currImg.attr('alt'));
+  console.log($(this).find('img').attr('src'));
 });

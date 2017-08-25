@@ -1,7 +1,5 @@
 'use strict';
 
-console.log('running');
-
 $('#number-chooser').submit(event => {
   console.log(`event ran `);
   event.preventDefault();
@@ -12,35 +10,30 @@ $('#number-chooser').submit(event => {
 });
 
 function fizzbuzz(countTo){
-  let itemClass = ``;
   let itemTxt;
   let i;
   for (i = 1; i <= countTo; i++){
     console.log(`loop ${i}`);
-    itemClass = `fizz-buzz-item`;
     itemTxt = i;
     switch(i%15){
       case 0:
-        itemClass += ' fizzbuzz';
         itemTxt = 'fizzbuzz';
         break;
       case (3):
       case (6):
       case (9):
       case (12):
-        itemClass += ' fizz';
         itemTxt = 'fizz';        
         break;
       case 5:
       case 10:
-        itemClass += ' buzz';
         itemTxt = 'buzz';        
         break;
       default:
     }
 
     $('.js-results').append(
-      `<div class="${itemClass}">
+      `<div class="fizz-buzz-item ${itemTxt}">
       <span>${itemTxt}</span></div>`);
   }
 }
